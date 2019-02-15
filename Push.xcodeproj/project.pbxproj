@@ -15,6 +15,7 @@
 		0419BD1A2216557D006B7E0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0419BD192216557D006B7E0A /* main.m */; };
 		0419BD242216557E006B7E0A /* PushTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0419BD232216557E006B7E0A /* PushTests.m */; };
 		0419BD2F2216557E006B7E0A /* PushUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0419BD2E2216557E006B7E0A /* PushUITests.m */; };
+		E14CE3EB50D6C7776796B1BF /* libPods-Push.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF181703D20EDFE34F1FD6B8 /* libPods-Push.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,10 @@
 		0419BD2A2216557E006B7E0A /* PushUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0419BD2E2216557E006B7E0A /* PushUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushUITests.m; sourceTree = "<group>"; };
 		0419BD302216557E006B7E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0419BD3C22165A00006B7E0A /* Push.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Push.entitlements; sourceTree = "<group>"; };
+		62EB7C19600ABF4C202A6A07 /* Pods-Push.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Push.release.xcconfig"; path = "Pods/Target Support Files/Pods-Push/Pods-Push.release.xcconfig"; sourceTree = "<group>"; };
+		BF181703D20EDFE34F1FD6B8 /* libPods-Push.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Push.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7652B7B3FC93EE1C018E90 /* Pods-Push.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Push.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Push/Pods-Push.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E14CE3EB50D6C7776796B1BF /* libPods-Push.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +91,8 @@
 				0419BD222216557E006B7E0A /* PushTests */,
 				0419BD2D2216557E006B7E0A /* PushUITests */,
 				0419BD082216557C006B7E0A /* Products */,
+				4F54152F58D62E3A8458B036 /* Pods */,
+				E2E961DB5CF4317EC52FB633 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +109,7 @@
 		0419BD092216557C006B7E0A /* Push */ = {
 			isa = PBXGroup;
 			children = (
+				0419BD3C22165A00006B7E0A /* Push.entitlements */,
 				0419BD0A2216557C006B7E0A /* AppDelegate.h */,
 				0419BD0B2216557C006B7E0A /* AppDelegate.m */,
 				0419BD0D2216557C006B7E0A /* ViewController.h */,
@@ -132,6 +141,23 @@
 			path = PushUITests;
 			sourceTree = "<group>";
 		};
+		4F54152F58D62E3A8458B036 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE7652B7B3FC93EE1C018E90 /* Pods-Push.debug.xcconfig */,
+				62EB7C19600ABF4C202A6A07 /* Pods-Push.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E2E961DB5CF4317EC52FB633 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF181703D20EDFE34F1FD6B8 /* libPods-Push.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,6 +165,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0419BD332216557E006B7E0A /* Build configuration list for PBXNativeTarget "Push" */;
 			buildPhases = (
+				978AEB6C315A6511253AED2E /* [CP] Check Pods Manifest.lock */,
 				0419BD032216557C006B7E0A /* Sources */,
 				0419BD042216557C006B7E0A /* Frameworks */,
 				0419BD052216557C006B7E0A /* Resources */,
@@ -199,6 +226,11 @@
 				TargetAttributes = {
 					0419BD062216557C006B7E0A = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					0419BD1E2216557E006B7E0A = {
 						CreatedOnToolsVersion = 10.1;
@@ -256,6 +288,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		978AEB6C315A6511253AED2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Push-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0419BD032216557C006B7E0A /* Sources */ = {
@@ -433,34 +490,44 @@
 		};
 		0419BD342216557E006B7E0A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE7652B7B3FC93EE1C018E90 /* Pods-Push.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Push/Push.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8JK3D2L5JK;
 				INFOPLIST_FILE = Push/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.woodsoo.www.Push;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hahapush.push;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Push-Ad-Hoc";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		0419BD352216557E006B7E0A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62EB7C19600ABF4C202A6A07 /* Pods-Push.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Push/Push.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8JK3D2L5JK;
 				INFOPLIST_FILE = Push/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.woodsoo.www.Push;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hahapush.push;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Push-Ad-Hoc";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
